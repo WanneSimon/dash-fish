@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>dash-fish</artifactId>
+  <version>0.0.1</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.2</version>
+    <!-- <relativePath /> lookup parent from repository -->
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <springboot-javafx.version>2.1.6</springboot-javafx.version>
+    <log4j.version>2.14.1</log4j.version>
+    <tika-core.version>2.4.1</tika-core.version>
+    <!-- 
+    <snakeyaml.version>1.30</snakeyaml.version>
+    <slf4j.version>1.7.30</slf4j.version>
+    <log4j-slf4j-impl.version>2.13.3</log4j-slf4j-impl.version>
+    -->
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>de.roskenet</groupId>
+        <artifactId>springboot-javafx-support</artifactId>
+        <version>${springboot-javafx.version}</version>
+    </dependency>
+      
+    <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+    </dependency>
+    
+    <!-- 文件类型检测  -->
+    <dependency>
+        <groupId>org.apache.tika</groupId>
+        <artifactId>tika-core</artifactId>
+        <version>${tika-core.version}</version>
+    </dependency>
+    
+    <!-- 日志 -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>  
+        <artifactId>log4j-api</artifactId>  
+    </dependency>  
+    <dependency>  
+        <groupId>org.apache.logging.log4j</groupId>  
+        <artifactId>log4j-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+          <configuration>
+            <mainClass>cc.wanforme.dashfish.DashFish</mainClass>
+          </configuration>
+      </plugin>
+    </plugins>
+  </build> 
+</project>
